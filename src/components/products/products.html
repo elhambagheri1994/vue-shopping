@@ -1,0 +1,16 @@
+<div class="products-container">
+  <div :key="product.id" v-for="product in products">
+    <div class="product" @click="detail(product)">
+      <img :src="product.images.main" :alt="product.title" />
+      <span> {{product.title}}</span>
+      <div class="price">
+        {{addSeprator(product.price.selling_price)}} {{$t('tomans')}}
+      </div>
+      <CustomButton
+        @button-click="addItemToCart(product,$event)"
+        color="primary"
+        title="addToCart"
+      />
+    </div>
+  </div>
+</div>

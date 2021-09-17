@@ -1,0 +1,13 @@
+<div class="cart-detail">
+    <div class="detail-title">
+      <span>{{number}} {{$t('product')}}</span>
+      <router-link to="/cart"
+      ><span>{{$t("showCarts")}}</span></router-link>
+    </div>
+    <div class="products">
+      <div :key="product.id" v-for="product in products" @click="detail(product)">
+        <img :src="product.images.main" :alt="product.title" />
+        <span> {{product.title}}</span>
+    </div>
+    </div>
+  </div>

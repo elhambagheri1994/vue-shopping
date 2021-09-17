@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    <img :src="logo" alt="digikala" @click="$router.push({ path: '/home'})" />
+    <div @mouseover="showDetailOnHover()" @mouseleave="showDetail = false">
+      <router-link to="/cart"
+        ><img class="cart" :src="cart" alt="cart" />
+        <span v-show="number>0" class="counter">{{number}}</span></router-link
+      >
+      <transition name="fade">
+        <CartModal
+          :products="products"
+          :number="number"
+          v-show="showDetail && number>0"
+        />
+      </transition>
+    </div>
+  </div>
+</header>

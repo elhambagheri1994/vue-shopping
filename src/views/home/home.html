@@ -1,0 +1,9 @@
+<div class="home-page">
+  <PageLoading v-show="loading"/>
+  <Products :products="products" />
+  <Pagination
+    @refetch-list="getProducts"
+    :totalItem="totalItem"
+    :totalPages="totalPages"
+  />
+</div>

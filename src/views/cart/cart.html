@@ -1,0 +1,20 @@
+<div>
+  <PageTitle title="cart" />
+  <div class="cart-container">
+    <div :key="`cart${product.id}`" v-for="product in products">
+      <div class="product">
+        <div>
+          <img :src="product.images.main" :alt="product.title" />
+          <span> {{product.title}}</span>
+        </div>
+        <div class="price">
+          {{addSeprator(product.price.selling_price)}} {{$t('tomans')}}
+        </div>
+      </div>
+    </div>
+    <div class="cartIsEmtpy" v-show="!products || products.length===0">
+      {{$t('cartIsEmtpy')}}
+      <router-link to="/home"> {{$t('backHome')}} </router-link>
+    </div>
+  </div>
+</div>

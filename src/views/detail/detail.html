@@ -1,0 +1,19 @@
+<div class="detail-page">
+  <div class="product">
+    <PageLoading v-show="loading" />
+    <div class="title-block">
+      <img :src="product.images.main" :alt="product.title" />
+      <span> {{product.title}}</span>
+    </div>
+    <div class="price-block">
+      <div class="price">
+        {{addSeprator(product.price.selling_price)}} {{$t('tomans')}}
+      </div>
+      <CustomButton
+        @button-click="addItemToCart(product)"
+        color="primary"
+        title="addToCart"
+      />
+    </div>
+  </div>
+</div>
